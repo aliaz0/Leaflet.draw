@@ -20,7 +20,8 @@ L.Draw.Rectangle = L.Draw.SimpleShape.extend({
 			clickable: true
 		},
 		showArea: true, //Whether to show the area in the tooltip
-		metric: true // Whether to use the metric measurement system or imperial
+		metric: true, // Whether to use the metric measurement system or imperial
+		onDrawingText: null
 	},
 
 	// @method initialize(): void
@@ -80,7 +81,7 @@ L.Draw.Rectangle = L.Draw.SimpleShape.extend({
 		if (shape) {
 			latLngs = this._shape._defaultShape ? this._shape._defaultShape() : this._shape.getLatLngs();
 			area = L.GeometryUtil.geodesicArea(latLngs);
-			subtext = showArea ? L.GeometryUtil.readableArea(area, this.options.metric) : '';
+			subtext = onDrawingText ? onDrawingText(latLngs) : showArea ? L.GeometryUtil.readableArea(area, this.options.metric) : '';
 		}
 
 		return {
