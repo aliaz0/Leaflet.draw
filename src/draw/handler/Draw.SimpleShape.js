@@ -103,6 +103,7 @@ L.Draw.SimpleShape = L.Draw.Feature.extend({
 		if (this._isDrawing) {
 			this._tooltip.updateContent(this._getTooltipText());
 			this._drawShape(latlng);
+			this._map.fire(L.Draw.Event.DRAWING, {propagatedFrom: this._shape, popup: this._tooltip})
 		}
 	},
 

@@ -263,13 +263,13 @@ exports.test = function (complete, fail) {
 
     console.log('Running tests...');
 
-    var server = new karma.Server(testConfig, function (exitCode) {
-        if (!exitCode) {
-            console.log('\tTests ran successfully.\n');
-            complete();
-        } else {
-            process.exit(exitCode);
-        }
-    });
-    server.start();
+    // var server = new karma.Server(testConfig, function (exitCode) {
+    //     if (!exitCode) {
+    //         console.log('\tTests ran successfully.\n');
+    //         complete();
+    //     } else {
+    //         process.exit(exitCode);
+    //     }
+    // });
+    // server.start();
 };

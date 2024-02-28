@@ -73,6 +73,15 @@ L.Draw.Event.DELETED = 'draw:deleted';
 L.Draw.Event.DRAWSTART = 'draw:drawstart';
 
 /**
+ * @event draw:drawing: ILayer
+ *
+ * The type of layer this is. One of:`polyline`; `polygon`; `rectangle`; `circle`
+ *
+ * Triggered when the user drawing a particular shape.
+ */
+L.Draw.Event.DRAWING = 'draw:drawing';
+
+/**
  * @event draw:drawstop: String
  *
  * The type of layer this is. One of: `polyline`; `polygon`; `rectangle`; `circle`; `marker`
