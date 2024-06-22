@@ -106,5 +106,41 @@ L.DrawToolbar = L.Toolbar.extend({
 				this._modes[type].handler.setOptions(options[type]);
 			}
 		}
+	},
+
+	addToolbar: function (map) {
+		var container = L.Toolbar.prototype.addToolbar.call(this, map);
+
+		if (this.options.polygon) {
+			button = this._modes.polygon.button;
+
+			if (this.options.polygon.disabled) {
+				L.DomUtil.addClass(button, 'leaflet-disabled');
+			} else {
+				L.DomUtil.removeClass(button, 'leaflet-disabled');
+			}
+		}
+
+		if (this.options.rectangle) {
+			button = this._modes.rectangle.button;
+
+			if (this.options.rectangle.disabled) {
+				L.DomUtil.addClass(button, 'leaflet-disabled');
+			} else {
+				L.DomUtil.removeClass(button, 'leaflet-disabled');
+			}
+		}
+
+		if (this.options.circle) {
+			button = this._modes.circle.button;
+
+			if (this.options.circle.disabled) {
+				L.DomUtil.addClass(button, 'leaflet-disabled');
+			} else {
+				L.DomUtil.removeClass(button, 'leaflet-disabled');
+			}
+		}
+
+		return container;
 	}
 });

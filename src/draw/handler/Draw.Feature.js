@@ -31,7 +31,7 @@ L.Draw.Feature = L.Handler.extend({
 	// @method enable(): void
 	// Enables this handler
 	enable: function () {
-		if (this._enabled) {
+		if (this._enabled || this.options.disabled) {
 			return;
 		}
 
